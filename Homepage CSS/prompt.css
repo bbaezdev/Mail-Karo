@@ -1,0 +1,129 @@
+/* prompt.css */
+
+.prompt-section {
+  background-color: #0D0D0D;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.prompt-container {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  color: #fff;
+}
+
+.prompt-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+.prompt-subtitle {
+  color: #B0B0B0;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.prompt-box {
+  display: flex;
+  background-color: #1A1A1A;
+  border: 1px solid #333;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255,215,0,0.08);
+  transition: 0.3s;
+}
+
+.prompt-box:hover {
+  box-shadow: 0 0 25px rgba(255,215,0,0.15);
+}
+
+.prompt-box input {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #EAEAEA;
+  font-size: 1rem;
+}
+
+.prompt-box button {
+  background: linear-gradient(90deg, #FFD700, #FFC300);
+  color: #000;
+  font-weight: 600;
+  padding: 0 26px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prompt-box button:hover {
+  box-shadow: 0 0 25px rgba(255,215,0,0.5);
+  transform: translateY(-2px);
+}
+
+/* Output Box */
+.output-box {
+  margin-top: 40px;
+  background-color: #1A1A1A;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: left;
+  color: #EAEAEA;
+  box-shadow: 0 0 20px rgba(255,215,0,0.05);
+  transition: 0.3s;
+}
+
+.output-box:hover {
+  box-shadow: 0 0 25px rgba(255,215,0,0.15);
+}
+
+.output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.output-header h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+.output-header button {
+  background: linear-gradient(90deg, #FFD700, #FFC300);
+  color: #000;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.output-header button:hover {
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .prompt-box {
+    flex-direction: column;
+  }
+
+  .prompt-box button {
+    width: 100%;
+    padding: 14px;
+  }
+}

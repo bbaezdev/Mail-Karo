@@ -1,0 +1,131 @@
+/* footer.css */
+
+.footer {
+  background: #0D0D0D;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 60px 20px 30px;
+  color: #EAEAEA;
+  text-align: center;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,215,0,0.7), transparent, rgba(255,215,0,0.7));
+  box-shadow: 0 0 15px rgba(255,215,0,0.4);
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 12px rgba(255,215,0,0.3));
+}
+
+.footer-logo h2 {
+  color: #FFD700;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  margin-top: 8px;
+}
+
+.footer-logo .tagline {
+  font-size: 0.95rem;
+  color: #B0B0B0;
+  margin-top: 4px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #EAEAEA;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 8px rgba(255,215,0,0.5);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #EAEAEA;
+  font-size: 1.8rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #FFD700;
+  transform: translateY(-4px) scale(1.1);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
+}
+
+
+/* Footer Bottom (Single Line Layout) */
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-info {
+  color: #B0B0B0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-info span {
+  color: #B0B0B0;
+}
+
+.footer-info .founder {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.footer-info .ai-credit {
+  font-style: italic;
+  color: #EAEAEA;
+}
+
+.footer-info .vibe {
+  color: #888;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-links { gap: 15px; }
+}
