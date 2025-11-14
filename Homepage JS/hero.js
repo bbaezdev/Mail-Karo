@@ -23,10 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
     spark.style.animationDuration = 3 + Math.random() * 5 + "s";
     hero.appendChild(spark);
   }
+
+  // Fade-in logo on load
+const logo = document.querySelector(".mailkaro-logo");
+setTimeout(() => {
+  logo.style.opacity = "1";
+  logo.style.transform = "scale(1)";
+}, 400);
+
 });
 
 const heroStyle = document.createElement("style");
-style.innerHTML = `
+heroStyle.innerHTML = `
 .spark {
   position: absolute;
   width: 4px;
