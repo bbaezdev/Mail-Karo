@@ -1,7 +1,7 @@
 /* hero.css */
 
 .hero {
-  width: 100%;
+  width: 100%; 
   min-height: 90vh;
   background: radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.05), transparent 60%),
               radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.07), transparent 60%);
@@ -79,26 +79,6 @@
   justify-content: center;
 }
 
-.hero-image img {
-  width: 80%;
-  max-width: 380px;
-  border-radius: 50%; /* ✅ makes image perfectly circular */
-  border: 3px solid rgba(255, 215, 0, 0.4); /* yellow glow border */
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
-  animation: float 4s ease-in-out infinite;
-  z-index: 2;
-  object-fit: cover; /* ensures image fills the circle neatly */
-}
-
-.glow {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle, rgba(255,215,0,0.15), transparent 70%);
-  border-radius: 50%;
-  animation: pulse 3s ease-in-out infinite;
-  z-index: 1;
-}
 
 /* Animations */
 @keyframes fadeInUp {
@@ -150,5 +130,57 @@
 
   .hero-btn {
     margin: 25px auto 0;
+  }
+}
+
+/* ============================
+   Mail Karo Logo Animation
+============================ */
+
+.mailkaro-logo {
+  width: 80%;
+  max-width: 380px;   /* SAME AS OLD CIRCLE */
+  object-fit: contain;
+  animation: logoFloat 5s ease-in-out infinite;
+  z-index: 3;
+  position: relative;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.35));
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* Animation */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.35));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.55));
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+
+/* Responsive logo */
+@media (max-width: 900px) {
+  .mailkaro-logo {
+    width: 220px;
+  }
+  .logo-glow {
+    width: 250px;
+    height: 250px;
   }
 }
