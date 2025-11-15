@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       // 🔗 Connect to local backend API
-      const API_URL = "http://localhost:3000/api/generate-email";
+      const API_URL = "https://mail-karo.onrender.com/api/generate-email";
       const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
