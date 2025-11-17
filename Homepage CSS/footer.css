@@ -88,39 +88,53 @@
 }
 
 
-/* Footer Bottom (Single Line Layout) */
+/* Footer Bottom (Premium Professional Design) */
 .footer-bottom {
-  margin-top: 30px;
-  border-top: 1px solid #222;
-  padding-top: 20px;
+  margin-top: 35px;
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  padding-top: 22px;
   text-align: center;
 }
 
 .footer-info {
-  color: #B0B0B0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: #CFCFCF;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
 }
 
-.footer-info span {
-  color: #B0B0B0;
-}
-
+/* Founder Highlight */
 .footer-info .founder {
   color: #FFD700;
   font-weight: 600;
 }
 
+/* "Made with ❤️ in India 🇮🇳" Highlight */
+.footer-info .made-in-india {
+  color: #FFD700;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Normal copyright text */
 .footer-info .copyright {
   color: #EAEAEA;
   font-weight: 500;
 }
 
-
+/* Responsive Footer Line */
+@media (max-width: 600px) {
+  .footer-info {
+    font-size: 0.88rem;
+    gap: 8px;
+    flex-direction: column;
+  }
+}
 
 /* Responsive */
 @media (max-width: 600px) {
