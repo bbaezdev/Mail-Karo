@@ -193,4 +193,4 @@ Founder & Developer of **Mail Karo – AI Email Writer**
 
 ## 📄 License
 
-This project is licensed under the MIT License – free to use and modify.
+This project is licensed under the Business Source License (BSL). You may use the source code for non-production purposes. Production use requires following the terms defined in the LICENSE file. After the Change Date stated in the license, the project will convert to an open-source license automatically.
