@@ -1,4 +1,4 @@
-/* Mail Karo — FINAL PUBLIC URL PDF ENGINE */
+/* Mail Karo — FINAL PUBLIC URL PDF ENGINE (Watermark Behind Text) */
 (function () {
   function ready(fn) {
     if (document.readyState !== "loading") fn();
@@ -15,16 +15,12 @@
       return;
     }
 
-    /* ----------------------------------------------------------
-       1) BUTTON STATE CONTROL
-    ---------------------------------------------------------- */
+    /* ---------------- BUTTON CONTROL ---------------- */
     function disableBtns() {
       downloadBtn.disabled = true;
       previewBtn.disabled = true;
       downloadBtn.style.opacity = "0.5";
       previewBtn.style.opacity = "0.5";
-      downloadBtn.style.cursor = "not-allowed";
-      previewBtn.style.cursor = "not-allowed";
     }
 
     function enableBtns() {
@@ -32,16 +28,11 @@
       previewBtn.disabled = false;
       downloadBtn.style.opacity = "1";
       previewBtn.style.opacity = "1";
-      downloadBtn.style.cursor = "pointer";
-      previewBtn.style.cursor = "pointer";
     }
 
-    disableBtns(); // start disabled
+    disableBtns();
 
-
-    /* ----------------------------------------------------------
-       2) LIVE DETECTION — ENABLE BUTTONS WHEN EMAIL READY
-    ---------------------------------------------------------- */
+    /* ---------------- OUTPUT WATCHER ---------------- */
     const observer = new MutationObserver(() => {
       const t = outEl.innerText.trim();
 
@@ -59,10 +50,7 @@
 
     observer.observe(outEl, { childList: true, subtree: true });
 
-
-    /* ----------------------------------------------------------
-       3) LOAD jsPDF
-    ---------------------------------------------------------- */
+    /* ---------------- LOAD jsPDF ---------------- */
     function loadJsPDF() {
       return new Promise((resolve, reject) => {
         if (window.jspdf) return resolve(window.jspdf.jsPDF);
@@ -76,31 +64,21 @@
       });
     }
 
-
-    /* ----------------------------------------------------------
-       4) PUBLIC URL WATERMARK (SAFE)
-    ---------------------------------------------------------- */
+    /* ---------------- PUBLIC URL WATERMARK ---------------- */
     const watermarkURL =
       "https://mail-karo.netlify.app/All%20Images/Logo.png";
 
     function loadWatermark() {
-      return fetch(watermarkURL)
-        .then((r) => r.blob())
-        .then(
-          (blob) =>
-            new Promise((resolve) => {
-              const reader = new FileReader();
-              reader.onload = () => resolve(reader.result);
-              reader.readAsDataURL(blob);
-            })
-        )
-        .catch(() => null);
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous"; // important for CORS
+        img.onload = () => resolve(img);
+        img.onerror = () => reject("Watermark failed");
+        img.src = watermarkURL + "?v=" + Date.now();
+      });
     }
 
-
-    /* ----------------------------------------------------------
-       5) PDF CREATOR
-    ---------------------------------------------------------- */
+    /* ---------------- PDF CREATOR ---------------- */
     async function createPdf({ preview = false }) {
       const text = outEl.innerText.trim();
       if (!text || text.includes("Generating")) {
@@ -115,7 +93,36 @@
       const pageH = doc.internal.pageSize.getHeight();
       const margin = 40;
 
-      /* Body text */
+      /* ---- Load watermark BEFORE adding text ---- */
+      let wm = null;
+      try {
+        wm = await loadWatermark();
+      } catch (err) {
+        console.warn(err);
+      }
+
+      /* ---- Add Watermark on every new page FIRST ---- */
+      function addWatermark(pageIndex) {
+        if (!wm) return;
+
+        doc.setPage(pageIndex);
+        doc.addImage(
+          wm,
+          "PNG",
+          (pageW - 260) / 2,
+          (pageH - 260) / 2,
+          260,
+          260,
+          "",
+          "FAST",    // faster + stable
+          0.06       // ⭐ VERY light opacity (background effect)
+        );
+      }
+
+      /* Add watermark to the FIRST page before text */
+      addWatermark(1);
+
+      /* ---- BODY TEXT ---- */
       const body = doc.splitTextToSize(text, pageW - margin * 2);
       let y = 40;
 
@@ -125,49 +132,30 @@
       body.forEach((line) => {
         if (y > pageH - 60) {
           doc.addPage();
+          const newPage = doc.getNumberOfPages();
+          addWatermark(newPage); // watermark BEFORE text
           y = 40;
         }
         doc.text(line, margin, y);
         y += 16;
       });
 
-      /* Watermark */
-      const watermark = await loadWatermark();
-      if (watermark) {
-        const pages = doc.getNumberOfPages();
-
-        for (let p = 1; p <= pages; p++) {
-          doc.setPage(p);
-          doc.addImage(
-            watermark,
-            "PNG",
-            (pageW - 260) / 2,
-            (pageH - 260) / 2,
-            260,
-            260,
-            "",
-            "NONE",
-            0.15 // opacity
-          );
-        }
-      }
-
-      /* Footer */
+      /* ---- FOOTER ---- */
       doc.setFontSize(10);
       doc.setTextColor(160, 140, 40);
       doc.text("Generated by Mail Karo", margin, pageH - 30);
 
-      /* Save or Preview */
+      /* ---- EXPORT ---- */
       if (preview) {
-        window.open(doc.output("bloburl"), "_blank");
+        const blob = doc.output("blob");
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
       } else {
         doc.save("MailKaro_Email.pdf");
       }
     }
 
-    /* ----------------------------------------------------------
-       6) BUTTON EVENTS
-    ---------------------------------------------------------- */
+    /* ---------------- BUTTON EVENTS ---------------- */
     downloadBtn.onclick = () => createPdf({ preview: false });
     previewBtn.onclick = () => createPdf({ preview: true });
   });
