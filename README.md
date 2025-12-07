@@ -29,13 +29,6 @@ Every contribution counts. ❤️
 ```
 ---
 
-### Current Platform Deployment Status
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a5f0f2a9-4ab4-49d8-ba33-34096683b4de/deploy-status)](https://app.netlify.com/projects/mail-karo/deploys) 
-[![Live Site](https://img.shields.io/badge/Live%20Demo-Visit%20Now-blue)](https://mail-karo.netlify.app)
-
----
-
 ## Current Platform Status
 Below are the actual screenshots of Mail Karo platform that describe its structure and function.
 
