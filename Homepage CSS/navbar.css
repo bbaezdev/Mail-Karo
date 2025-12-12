@@ -317,78 +317,100 @@ body {
     display: flex;
   }
 
-  /* Dropdown Menu */
+  /* Dropdown Menu*/
   .nav-links {
-    display: none;
+    display: block;
+    /* Always block for transition */
     position: absolute;
-    margin-left: 0;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 400px;
-    background-color: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-    animation: fadeIn 0.3s ease;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    background-color: var(--bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    /* Animation initial state */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   }
 
   [data-theme="light"] .nav-links {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   }
 
+  /* Active State */
   .nav-links.active {
-    display: block;
+    max-height: 400px;
+    /* Allow enough height */
+    opacity: 1;
   }
 
   .nav-links ul {
     flex-direction: column;
-    padding: 20px;
-    gap: 15px;
+    padding: 0;
+    gap: 0;
+  }
+
+  /* List Items */
+  .nav-links li {
+    width: 100%;
   }
 
   .nav-links a {
     display: block;
     width: 100%;
-    text-align: center;
-    padding: 12px 20px;
+    text-align: left;
+    padding: 16px 24px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1rem;
   }
 
-  .cta {
+  /* Remove border from last item */
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .nav-links a:hover {
+    background-color: var(--panel);
+    padding-left: 30px;
+    /* Subtle slide effect */
+    color: var(--accent);
+  }
+
+  /* Reset CTA to look like a normal link in mobile */
+  .nav-links .cta {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--text) !important;
     width: 100%;
-    text-align: center;
-  }
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ==== Smooth Mobile Menu Slide Fix ==== */
-@media (max-width: 1150px) {
-  .nav-links {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
+    margin: 0;
+    text-align: left;
+    padding: 16px 24px;
+    border-radius: 0;
+    font-weight: 500;
     display: block;
-    /* Important: smooth animation ke lie display ko block rakho */
-    transition: max-height 0.35s ease, opacity 0.3s ease;
+    border-bottom: 1px solid var(--border);
   }
 
-  .nav-links.active {
-    max-height: 500px;
-    /* Enough height to open fully */
-    opacity: 1;
+  /* Ensure last child has no border */
+  .nav-links li:last-child .cta {
+    border-bottom: none;
+  }
+
+  .nav-links .cta:hover {
+    background-color: var(--panel) !important;
+    padding-left: 30px;
+    color: var(--accent) !important;
+    transform: none;
+    box-shadow: none !important;
   }
 }
 
@@ -399,8 +421,9 @@ body {
   }
 
   .nav-container {
-    padding: 10px 5px !important;
+    padding: 10px 15px !important;
   }
+
 }
 
 /* =========================================
