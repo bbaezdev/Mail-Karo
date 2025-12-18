@@ -46,13 +46,6 @@ Every contribution matters — code, testing, ideas, and design.
         <br /><b>Abhishek</b>
       </a>
       <br />💻 Backend
-   <td align="center">
-      <a href="https://github.com/bishal-dhakal">
-        <img src="https://avatars.githubusercontent.com/bishal-dhakal" width="80" />
-        <br /><b>Bishal</b>
-      </a>
-      <br />🎨 UI/UX
-    </td>
   </tr>
 </table>
 <table>
@@ -82,13 +75,6 @@ Every contribution matters — code, testing, ideas, and design.
       <a href="https://github.com/shubham-08s">
         <img src="https://avatars.githubusercontent.com/shubham-08s" width="80" />
         <br /><b>Shubham</b>
-      </a>
-      <br />🎨 UI/UX
-    </td>
-   <td align="center">
-      <a href="https://github.com/04suriya07-spec">
-        <img src="https://avatars.githubusercontent.com/04suriya07-spec" width="80" />
-        <br /><b>Suriya</b>
       </a>
       <br />🎨 UI/UX
     </td>
@@ -124,13 +110,6 @@ Every contribution matters — code, testing, ideas, and design.
       </a>
       <br />🎨 UI/UX
     </td>
-   <td align="center">
-      <a href="https://github.com/MUmairQadeer">
-        <img src="https://avatars.githubusercontent.com/MUmairQadeer" width="80" />
-        <br /><b>MUmairQadeer</b>
-      </a>
-      <br />🎨 UI/UX
-    </td>
   </tr>
 </table>
 <table>
@@ -156,6 +135,31 @@ Every contribution matters — code, testing, ideas, and design.
       </a>
       <br />🎨 UI/UX
     </td>
+    <td align="center">
+      <a href="https://github.com/MUmairQadeer">
+        <img src="https://avatars.githubusercontent.com/MUmairQadeer" width="80" />
+        <br /><b>MUmairQadeer</b>
+      </a>
+      <br />🎨 UI/UX
+    </td>
+</table>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/bishal-dhakal">
+        <img src="https://avatars.githubusercontent.com/bishal-dhakal" width="80" />
+        <br /><b>Bishal</b>
+      </a>
+      <br />🎨 UI/UX
+    </td>
+    <td align="center">
+      <a href="https://github.com/04suriya07-spec">
+        <img src="https://avatars.githubusercontent.com/04suriya07-spec" width="80" />
+        <br /><b>Suriya</b>
+      </a>
+      <br />🎨 UI/UX
+    </td>
+  </tr>
 </table>
 
 **🤝Want to see your name here? 
