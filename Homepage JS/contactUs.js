@@ -166,3 +166,23 @@ form.addEventListener("submit", async (e) => {
 });
 
 updateSubmit();
+
+// ================= YELLOW PARTICLES (FROM HERO) =================
+function addYellowParticles(targetSelector, count = 10) {
+  const target = document.querySelector(targetSelector);
+  if (!target) return;
+
+  for (let i = 0; i < count; i++) {
+    const spark = document.createElement("div");
+    spark.className = "spark";
+    spark.style.left = Math.random() * 100 + "%";
+    spark.style.top = Math.random() * 100 + "%";
+    spark.style.animationDuration = 3 + Math.random() * 5 + "s";
+    target.appendChild(spark);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  addYellowParticles("#contact-particle-area", 10);
+});
+
