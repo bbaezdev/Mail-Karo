@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let startTime = 0;
   let lastEmail = "";
+  let isChecking = false; // 🔒 HARD LOCK (ADDED)
 
   // 🔄 Sync dropdowns
   if (checkTypeSelect && checkTypeSelectMirror) {
@@ -54,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function runCheck(email, type) {
+    if (isChecking) return; // 🔒 BLOCK DOUBLE CALLS
+    isChecking = true;
+
     startTime = Date.now();
     totalTimeEl.innerText = "Total Time: 0s";
 
@@ -74,14 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await res.json();
 
-      // 🛡️ FINAL HARD SAFETY
+      // 🛡️ SAFETY CHECK (UNCHANGED)
       if (
         !data ||
         typeof data !== "object" ||
         data.score === undefined ||
         !data.severity
       ) {
-        throw new Error("Invalid quality report received.");
+        throw new Error("AI limit reached. Please wait and try again.");
       }
 
       const timeTaken = ((Date.now() - startTime) / 1000).toFixed(2);
@@ -128,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       output.innerHTML = `⚠️ ${err.message}`;
       checkBtn.innerText = "❌ Try Again";
     } finally {
+      isChecking = false; // 🔓 RELEASE LOCK
       enableAll();
     }
   }

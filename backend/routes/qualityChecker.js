@@ -3,8 +3,20 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const router = express.Router();
 
+// 🔒 GLOBAL COOLDOWN (ADDED)
+let lastQualityCheckTime = 0;
+const QUALITY_COOLDOWN_MS = 5000;
+
 router.post('/quality-check', async (req, res) => {
   try {
+    const now = Date.now();
+    if (now - lastQualityCheckTime < QUALITY_COOLDOWN_MS) {
+      return res.json(
+        fallbackReport("AI rate limit reached. Please wait a few seconds.")
+      );
+    }
+    lastQualityCheckTime = now;
+
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
       return res.json(fallbackReport("Server config error"));
@@ -25,15 +37,14 @@ router.post('/quality-check', async (req, res) => {
       model: 'gemini-2.5-flash-lite'
     });
 
-    // 🔥 MODE-WISE STRICT PROMPT
+    // 🧠 LIGHTWEIGHT PROMPT (UPDATED)
     const prompt = `
-You are an Email Quality Assurance system.
+You are an email quality checker.
 
-Checking Mode: ${checkType}
+Mode: ${checkType}
 
-Return ONLY valid JSON. No markdown. No text outside JSON.
+Return ONLY valid JSON.
 
-Schema:
 {
   "score": number,
   "severity": "Low" | "Medium" | "High",
@@ -46,17 +57,12 @@ Schema:
   "improvedEmail": string
 }
 
-Mode rules:
-- normal: grammar + clarity only
-- medium: tone + professionalism + risk
-- advanced: deep risk + rewrite full improved email
-
 Rules:
-- All keys MUST exist
-- score between 0–100
-- If not advanced, improvedEmail MUST be empty string
+- Keep values short
+- score 0–100
+- If not advanced, improvedEmail = ""
 
-EMAIL:
+Email:
 """${email}"""
 `.trim();
 
@@ -73,17 +79,13 @@ EMAIL:
       return res.json(fallbackReport("AI response issue"));
     }
 
-    // 🔒 HARD NORMALIZATION (NO MISSING KEYS)
     const score = Number(parsed.score) || 0;
 
     return res.json({
       score,
-
-      // 🔥 SEVERITY AUTO-FIX (CRITICAL)
       severity:
         parsed.severity ||
         (score >= 80 ? "Low" : score >= 60 ? "Medium" : "High"),
-
       summary: parsed.summary || "No summary provided.",
       grammar: parsed.grammar || "N/A",
       clarity: parsed.clarity || "N/A",
@@ -95,8 +97,8 @@ EMAIL:
     });
 
   } catch (err) {
-    console.error("🔥 Quality check failed:", err);
-    return res.json(fallbackReport("Unexpected error"));
+    console.error("🔥 Quality check failed:", err?.message);
+    return res.json(fallbackReport("AI service temporarily unavailable"));
   }
 });
 
