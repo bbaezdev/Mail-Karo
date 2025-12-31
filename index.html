@@ -147,28 +147,31 @@
 
 <body>
   <!-- Navbar section -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo-area">
-        <img src="All Images/Logo.png" alt="Mail Karo Logo" class="logo" />
-        <span class="brand-name">Mail Karo</span>
-      </div>
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <img src="All Images/Logo.png" alt="Mail Karo Logo" class="logo" />
+      <span class="brand-name">Mail Karo</span>
+    </div>
 
-      <button class="menu-btn" id="menu-btn" aria-label="Toggle Menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-      <nav class="nav-links" id="nav-links">
-        <ul>
-          <li><a class="nav-item" href="#about">About</a></li>
-          <li><a class="nav-item" href="All-pages-html/privacyPolicy.html">Privacy Policy</a></li>
-          <li><a class="nav-item" href="All-pages-html/terms-of-service.html">Terms Of Service</a></li>
-          <li><a class="nav-item cta" href="contactUs.html">Contact Us</a></li>
-        </ul>
-      </nav>
+    <nav class="nav-links" id="nav-links">
+      <ul>
+        <li><a class="nav-item" href="#about">About</a></li>
+        <li><a class="nav-item" href="All-pages-html/privacyPolicy.html">Privacy Policy</a></li>
+        <li><a class="nav-item" href="All-pages-html/terms-of-service.html">Terms Of Service</a></li>
+        <li><a class="nav-item cta" href="contactUs.html">Contact Us</a></li>
+      </ul>
+    </nav>
 
+    <!-- RIGHT SIDE: DARK MODE + LOGIN / PROFILE -->
+    <div class="nav-actions">
+      
       <!-- Theme Toggle Button -->
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
         <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
@@ -190,8 +193,16 @@
           <circle class="moon" cx="12" cy="12" r="5" mask="url(#moon-mask)" fill="currentColor" />
         </svg>
       </button>
+
+      <!-- 🔥 Login Button (visible BEFORE login) -->
+      <button id="loginBtn" class="login-btn">Login with Google</button>
+
+      <!-- 🟢 Profile Image (visible AFTER login) -->
+      <img id="userProfileImg" class="profile-img hidden" src="" alt="Profile" />
     </div>
-  </header>
+  </div>
+</header>
+
   <!-- Call to action section -->
 
   <!-- Global Unified Background Wrapper Start -->

@@ -468,3 +468,79 @@ body {
 .nav-item:hover {
   text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
 }
+
+/* =============================
+   NAV-ACTIONS (login + profile)
+   ============================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+/* Login Button (Before Login) */
+.login-btn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  color: #000;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.login-btn:hover {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Profile Image (After Login) */
+.profile-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =============================
+   RESPONSIVE NAV-ACTIONS FIX
+   ============================= */
+@media (max-width: 1150px) {
+  .nav-actions {
+    order: 4;
+    /* Always last */
+  }
+
+  .profile-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .login-btn {
+    padding: 7px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-img {
+    width: 36px;
+    height: 36px;
+  }
+}

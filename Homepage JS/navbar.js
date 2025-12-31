@@ -1,4 +1,6 @@
-// Navbar functionality
+/*******************************
+ * NAVBAR UI / MOBILE MENU
+ *******************************/
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu-btn");
   const navLinks = document.getElementById("nav-links");
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bars[2].classList.toggle("rotate2");
   });
 
-  // Handle scroll effects
+  // Scroll shrink effect
   window.addEventListener("scroll", () => {
     if (window.scrollY > 30) {
       navbar.style.background = "var(--bg)";
@@ -35,3 +37,67 @@ style.innerHTML = `
 .bar.fade { opacity: 0; }
 `;
 document.head.appendChild(style);
+
+
+/*******************************
+ * GOOGLE LOGIN / PROFILE TOGGLE
+ *******************************/
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } 
+from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+
+// ⚠️ paste YOUR Firebase config here
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBiFaLUQ8kGmpk6ePwwa-a_sslNTNbQd6A",
+  authDomain: "mail-karo-auth.firebaseapp.com",
+  projectId: "mail-karo-auth",
+  storageBucket: "mail-karo-auth.firebasestorage.app",
+  messagingSenderId: "568465528566",
+  appId: "1:568465528566:web:9c2b2757b6958ba98abed7",
+  measurementId: "G-87MESWT37B"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+// elements
+const loginBtn = document.getElementById("loginBtn");
+const userProfileImg = document.getElementById("userProfileImg");
+
+/*******************************
+ * LOGIN BUTTON CLICK
+ *******************************/
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log("Login OK:", result.user.displayName);
+      })
+      .catch((err) => console.log("Login error:", err));
+  });
+}
+
+/*******************************
+ * LOGOUT (future)
+ *******************************/
+window.logoutUser = function () {
+  signOut(auth).then(() => console.log("Logged out"));
+};
+
+/*******************************
+ * UI STATE CONTROL
+ *******************************/
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // logged in
+    loginBtn?.classList.add("hidden");
+    userProfileImg.src = user.photoURL;
+    userProfileImg.classList.remove("hidden");
+  } else {
+    // logged out
+    loginBtn?.classList.remove("hidden");
+    userProfileImg.classList.add("hidden");
+  }
+});
