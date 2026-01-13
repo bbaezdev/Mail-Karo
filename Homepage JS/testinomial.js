@@ -237,7 +237,7 @@ function stepAuto() {
 
 function startAuto() {
   if (autoTimer) clearInterval(autoTimer);
-  autoTimer = setInterval(stepAuto, 7000);
+  autoTimer = setInterval(stepAuto, 5000);
 }
 
 function resetAuto() {
