@@ -177,6 +177,18 @@
   font-family: "Poppins", sans-serif;
 }
 
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .footer-left h3 {
   margin: 0 0 8px 0;
   color: #ffd94a;
@@ -211,4 +223,14 @@
   color: #000;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(255, 217, 74, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
 }
