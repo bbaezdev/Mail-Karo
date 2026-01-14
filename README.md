@@ -384,11 +384,20 @@ Project Owner of **Mail Karo – AI Email Writer**
 This project is licensed under the Business Source License (BSL). You may use the source code for non-production purposes. Production use requires following the terms defined in the LICENSE file. After the Change Date stated in the license, the project will convert to an open-source license automatically.
 
 
-## Brand & Logo Policy
+## 📄 Brand & Logo Policy
 The source code of this project is available under the license in `LICENSE`.
 
 However, the name **Mail Karo** and the **Mail Karo logo** are protected brand assets and are NOT granted for use with forks or derivative products.
 
 If you create a fork, please use a different name and remove all Mail Karo branding.
 See `TRADEMARK.md` for details.
+
+
+## 📄 Legal
+This project is protected by copyright law.
+If you use this code, you must follow the terms of the license in `LICENSE`.
+
+If someone republishes this project without attribution or violates the license terms, it may be subject to takedown actions.
+
+Report misuse: Please open an issue in this repository.
 
