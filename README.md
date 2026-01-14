@@ -169,7 +169,7 @@ Check issues labeled `good first issue` and start contributing 💚**
 
 ## 🤝 Contribute & Build With Us
 
-This is a fully **public, open-source project**, and we genuinely welcome developers, designers, writers — **anyone passionate** — to join us.
+We genuinely welcome developers, designers, writers — **anyone passionate** — to join us and grow with us.
 
 Whether it's fixing a bug, improving UI/UX\, adding new AI features, or suggesting ideas:
 
