@@ -20,61 +20,61 @@ Every contribution matters — code, testing, ideas, and design.
 <div align="center" style="line-height: 1;">
 
 <a href="https://github.com/Code-By-Adarsh" title="@Adarsh">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Code-By-Adarsh&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Code-By-Adarsh&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/jaideepkathiresan" title="@jaideepkathiresan">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/jaideepkathiresan&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/jaideepkathiresan&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/divyanshi-ghume" title="@divyanshi-ghume">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/divyanshi-ghume&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/divyanshi-ghume&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/Audyari" title="@Audyari">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Audyari&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Audyari&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/Abhishekghadge900" title="@Abhishekghadge900">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Abhishekghadge900&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Abhishekghadge900&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/dev-TarunSingh" title="@dev-TarunSingh">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/dev-TarunSingh&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/dev-TarunSingh&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/akbar-kurnia1" title="@akbar-kurnia1">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/akbar-kurnia1&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/akbar-kurnia1&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/surajkb2005" title="@surajkb2005">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/surajkb2005&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/surajkb2005&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/shubham-08s" title="@shubham-08s">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/shubham-08s&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/shubham-08s&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/sohxmdv" title="@sohxmdv">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/sohxmdv&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/sohxmdv&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/ZainabTravadi" title="@ZainabTravadi">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/ZainabTravadi&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/ZainabTravadi&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/laukik08" title="@laukik08">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/laukik08&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/laukik08&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/DunkinOPM" title="@DunkinOPM">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/DunkinOPM&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/DunkinOPM&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/flacoV" title="@flacoV">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/flacoV&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/flacoV&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/majidkawouk" title="@majidkawouk">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/majidkawouk&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/majidkawouk&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/Tanishq-Raina" title="@Tanishq-Raina">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Tanishq-Raina&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/Tanishq-Raina&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/MUmairQadeer" title="@MUmairQadeer">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/MUmairQadeer&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/MUmairQadeer&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/bishal-dhakal" title="@bishal-dhakal">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/bishal-dhakal&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/bishal-dhakal&h=60&w=60&fit=cover&mask=circle" />
 </a>
 <a href="https://github.com/04suriya07-spec" title="@04suriya07-spec">
-  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/04suriya07-spec&h=80&w=80&fit=cover&mask=circle" />
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/04suriya07-spec&h=60&w=60&fit=cover&mask=circle" />
 </a>
 
 </div>
