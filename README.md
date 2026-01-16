@@ -48,20 +48,6 @@ Every contribution matters — code, testing, ideas, and design.
       </a>
       <br />💻 Backend
     </td>
-  <td align="center">
-      <a href="https://github.com/dev-TarunSingh">
-        <img src="https://avatars.githubusercontent.com/dev-TarunSingh" width="80" />
-        <br /><b>Tarun Singh</b>
-      </a>
-      <br />🎨 UI/UX
-    </td>
-  <td align="center">
-      <a href="https://github.com/dev-TarunSingh">
-        <img src="https://avatars.githubusercontent.com/dev-TarunSingh" width="80" />
-        <br /><b>Tarun Singh</b>
-      </a>
-      <br />🎨 UI/UX
-    </td>
   </tr>
 </table>
 <table>
